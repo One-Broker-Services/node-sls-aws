@@ -1,7 +1,10 @@
 FROM node:12
 
+# set the NPM default global user back to root
+RUN npm -g config set user root
+
 #install serverless framwerok
-RUN sudo npm install -g serverless
+RUN npm install -g serverless
 
 #install awscli
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
