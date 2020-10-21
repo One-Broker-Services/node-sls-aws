@@ -1,7 +1,7 @@
 FROM node:12
 
 #install serverless framwerok
-RUN npm install -g serverless
+RUN sudo npm install -g serverless
 
 #install awscli
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
