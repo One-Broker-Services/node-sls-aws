@@ -7,9 +7,6 @@ RUN npm -g config set user root
 RUN npm install -g serverless
 
 #install awscli
-RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-RUN unzip awscli-bundle.zip
-RUN ./awscli-bundle/install -b ~/bin/aws
-
-#add aws cli to path
-RUN echo "export PATH=~/bin:$PATH" >> ~/.bashrc
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
