@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:12
 
 RUN npm install -g serverless
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
