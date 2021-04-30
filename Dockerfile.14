@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 
 # set the NPM default global user back to root
 RUN npm -g config set user root
