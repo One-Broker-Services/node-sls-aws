@@ -12,6 +12,7 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 
 #install vault
-RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-RUN sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-RUN sudo apt-get update && sudo apt-get install vault
+RUN curl https://releases.hashicorp.com/vault/1.7.1/vault_1.7.1_linux_386.zip -o "vault.zip"
+RUN unzip vault
+RUN mv vault /usr/bin/
+RUN vault -v
