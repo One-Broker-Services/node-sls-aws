@@ -18,6 +18,7 @@ RUN mv vault /usr/bin/
 RUN vault -v
 
 #install jq
-RUN curl https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 -o "jq"
+RUN curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 -o "jq"
 RUN mv jq /usr/bin
 RUN chmod +x /usr/bin/jq
+RUN jq --version
