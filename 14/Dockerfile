@@ -4,7 +4,7 @@ FROM node:14
 RUN npm -g config set user root
 
 #install serverless framwerok
-RUN npm install -g serverless
+RUN npm install -g serverless @sentry/cli
 
 #install awscli
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
