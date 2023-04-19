@@ -1,24 +1,16 @@
 FROM node:18
 
 # set the NPM default global user back to root
-RUN npm -g config set user root
+RUN npm -g config set user 0
 
 #install serverless framework
 RUN npm install -g serverless @sentry/cli
 
 #install awscli
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscliv2.zip
-RUN unzip awscliv2.zip
-RUN ./aws/install
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o awscliv2.zip && unzip awscliv2.zip &&./aws/install
 
 #install vault
-RUN curl "https://releases.hashicorp.com/vault/1.12.2/vault_1.12.2_linux_386.zip" -o "vault.zip"
-RUN unzip vault
-RUN mv vault /usr/bin/
-RUN vault -v
+RUN curl "https://releases.hashicorp.com/vault/1.12.2/vault_1.13.1_linux_386.zip" -o "vault.zip" && unzip vault && mv vault /usr/bin/
 
 #install jq
-RUN curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32" -o "jq"
-RUN mv jq /usr/bin
-RUN chmod +x /usr/bin/jq
-RUN jq --version
+RUN curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32" -o "jq" && mv jq /usr/bin && chmod +x /usr/bin/jq
