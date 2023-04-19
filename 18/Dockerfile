@@ -1,7 +1,6 @@
 FROM node:18
 
-# set the NPM default global user back to root
-RUN npm -g config set user 0
+USER root
 
 #install serverless framework
 RUN npm install -g serverless @sentry/cli
