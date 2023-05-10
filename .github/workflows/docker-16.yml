@@ -29,11 +29,11 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: onebrokerservices/node-sls-aws
-          tags: latest
+          tags: 16
       - name: Build and push Docker image
         uses: docker/build-push-action@v3.3.0
         with:
-          context: 14/
+          context: 16/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
