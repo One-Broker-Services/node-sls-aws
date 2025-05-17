@@ -1,4 +1,4 @@
-name: Publish Docker image node 22
+name: Publish Docker image node 22 with open source serverless
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -29,11 +29,11 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: onebrokerservices/node-sls-aws
-          tags: 22
+          tags: 22-osls
       - name: Build and push Docker image
         uses: docker/build-push-action@v3.3.0
         with:
-          context: 22/
+          context: 22-osls/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
